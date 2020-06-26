@@ -11,7 +11,7 @@ namespace MusicServiceClient
     /// <summary>
     /// Кэш альбомов.
     /// </summary>
-    public class AlbumsCache : ICache<string, IReadOnlyCollection<Album>>
+    public class AlbumsCache
     {
         /// <summary>
         /// Файловая система.
