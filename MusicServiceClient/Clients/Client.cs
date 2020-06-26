@@ -7,7 +7,7 @@ using MusicClient = Music.Music.MusicClient;
 namespace MusicServiceClient.Clients
 {
     /// <summary>
-    /// Кдиент.
+    /// Клиент.
     /// </summary>
     public class Client : IClient
     {
@@ -24,7 +24,7 @@ namespace MusicServiceClient.Clients
         }
 
         /// <summary>
-        /// Констурктор.
+        /// Конструктор.
         /// </summary>
         /// <param name="client">Клиент для вызова удаленных процедур.</param>
         public Client(MusicClient client)
