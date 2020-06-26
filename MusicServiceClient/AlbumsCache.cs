@@ -34,10 +34,10 @@ namespace MusicServiceClient
         /// <param name="artistName">Исполнитель.</param>
         /// <param name="albums">Альбомы.</param>
         /// <returns>Задача.</returns>
-        public async Task AddAsync(string artistName, IReadOnlyCollection<Album> albums)
+        public Task AddAsync(string artistName, IReadOnlyCollection<Album> albums)
         {
             this.cache[artistName] = albums;
-            await this.SaveCache();
+            return this.SaveCache();
         }
 
         /// <summary>
