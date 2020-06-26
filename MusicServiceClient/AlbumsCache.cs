@@ -37,7 +37,7 @@ namespace MusicServiceClient
         public Task AddAsync(string artistName, IReadOnlyCollection<Album> albums)
         {
             this.cache[artistName] = albums;
-            return this.SaveCache();
+            return this.SaveCacheAsync();
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace MusicServiceClient
         /// Сохранить кэш.
         /// </summary>
         /// <returns>Задача.</returns>
-        private Task SaveCache()
+        private Task SaveCacheAsync()
         {
             var cacheDump = JsonSerializer.Serialize(this.cache);
             return this.fileSystem.File.WriteAllTextAsync(this.cacheDumpPath, cacheDump);
