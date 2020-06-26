@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option csharp_namespace = "Music";
+
+package musicservice.v1;
+
+service Music {
+  rpc GetAlbumsStream (AlbumRequest) returns (stream .musicservice.v1.Album);
+  rpc GetAlbumsCollection (AlbumRequest) returns (AlbumCollectionResponse);
+}
+
+message AlbumRequest {
+  string artsitName = 1;
+}
+
+message AlbumCollectionResponse {
+  repeated Album albums = 1;
+}
+
+message Album {
+  string artist = 1;
+  int64 year = 2;
+  string title = 3;
+  repeated .musicservice.v1.Track tracks = 4;
+}
+
+message Track {
+  string title = 1;
+  int64 durationInSec = 2;
+}
